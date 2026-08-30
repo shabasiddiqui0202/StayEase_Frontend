@@ -4,24 +4,26 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 html,
 body {
-  height: 100%;
   width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 main {
-  height: 100%;
   width: 100%;
+  min-height: 100vh;
   background: #fbfbfb;
-  color: #000000;
-  padding: 0px 40px;
+  color: #000;
+  padding: 0 40px;
 }
 
-#section-1 {
-  height: 100%;
-  width: 100%;
-}
+/* ================= NAVBAR ================= */
 
 nav {
   width: 100%;
@@ -54,8 +56,8 @@ nav .header {
 
 .links a {
   text-decoration: none;
-  color: #000000;
-  font-weight: 500px;
+  color: #000;
+  font-weight: 500;
   font-size: 12px;
 }
 
@@ -68,49 +70,67 @@ nav .header {
 .btn button {
   border: none;
   background: #cfcfcf;
-  color: #000000;
-  padding: 7px 7px;
+  color: #000;
+  padding: 7px 10px;
   border-radius: 12px;
   cursor: pointer;
   font-size: 12px;
 }
 
 .btn button:nth-child(2) {
-  border: none;
-  background: #000000;
-  color: #ffffff;
-  padding: 7px 8px;
-  border-radius: 12px;
-  cursor: pointer;
+  background: #000;
+  color: #fff;
+}
+
+/* ================= SECTION 1 ================= */
+
+#section-1 {
+  width: 100%;
+  min-height: calc(100vh - 60px);
 }
 
 .hero-div {
-  height: calc(100% - 60px);
   width: 100%;
+  min-height: calc(100vh - 80px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   background-color: rgba(234, 236, 236, 0.616);
   border-radius: 20px;
   overflow: hidden;
-  padding: 10px 30px;
+  padding: 15px;
+  gap: 15px;
 }
 
 .hero-div .left {
-  height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 30px;
 }
 
 .right {
-  height: 100%;
   width: 50%;
+  min-height: 500px;
   background: hsl(161, 82%, 27%);
   overflow: hidden;
   border-radius: 20px;
 }
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right .imgDiv {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* ================= HERO CONTENT ================= */
 
 .logos {
   display: flex;
@@ -123,17 +143,13 @@ nav .header {
   display: flex;
   width: fit-content;
   border-radius: 50px;
-  background-color: #ffffff;
+  background-color: #fff;
   gap: 10px;
   align-items: center;
 }
 
 .rating i {
   font-size: 30px;
-}
-
-.left .logos img {
-  height: 35px;
 }
 
 .rating-text h3 {
@@ -146,14 +162,13 @@ nav .header {
 }
 
 .left h1 {
-  font-size: 100px;
+  font-size: clamp(55px, 7vw, 100px);
   font-weight: 600;
-  line-height: 90px;
+  line-height: 0.9;
 }
 
 .left p {
   font-size: 15px;
-
   line-height: 20px;
   opacity: 0.5;
   width: 90%;
@@ -169,59 +184,55 @@ nav .header {
 }
 
 .left .btn button:nth-child(2) {
-  border: none;
-  background: #000000;
-  color: #ffffff;
-  border-radius: 50px;
-  cursor: pointer;
+  background: #000;
+  color: #fff;
 }
 
 .left .trusted {
   font-size: 15px;
-
   line-height: 20px;
   opacity: 0.5;
   width: 90%;
 }
 
-.right img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.right .imgDiv {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
+/* ================= SECTION 2 ================= */
 
 #section-2 {
-  height: 100%;
   width: 100%;
-  background: #ffffff;
-  padding: 20px 0px;
+  min-height: 100vh;
+  background: #fff;
+  padding: 20px 0;
   border-radius: 20px;
 }
 
 .marquee-div {
   width: 100%;
-  height: 50%;
+  min-height: 450px;
   background-color: rgba(234, 236, 236, 0.616);
   border-radius: 20px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 20px;
+  gap: 10px;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+
+.marquee-div::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
-  width: 25%;
+  flex: 0 0 280px;
+  width: 280px;
   height: 380px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  margin: 10px;
   padding: 10px;
 }
 
@@ -230,32 +241,32 @@ nav .header {
   height: 90%;
   background: #000;
   border-radius: 10px;
-  background-image: url(https://images.unsplash.com/photo-1613214756180-9dd21ae795bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-image: url("https://images.unsplash.com/photo-1613214756180-9dd21ae795bb?q=80&w=687&auto=format&fit=crop");
   background-size: cover;
   background-position: top;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 10px;
 }
 
 .card:nth-child(2) .marquee-img-div {
-  background-image: url(https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-image: url("https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=687&auto=format&fit=crop");
 }
 
 .card:nth-child(4) .marquee-img-div {
-  background-image: url(https://images.unsplash.com/photo-1610123172763-1f587473048f?q=80&w=701&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-image: url("https://images.unsplash.com/photo-1610123172763-1f587473048f?q=80&w=701&auto=format&fit=crop");
 }
 
 .marquee-img-div i {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background: #000000;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .card .marquee-text {
@@ -269,6 +280,7 @@ nav .header {
   font-size: 15px;
   font-weight: 600;
 }
+
 .marquee-text p {
   font-size: 12px;
   opacity: 0.5;
@@ -279,7 +291,7 @@ nav .header {
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .explore-more {
@@ -287,7 +299,7 @@ nav .header {
   gap: 10px;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 
 #footer {
   margin-top: 60px;
@@ -312,7 +324,6 @@ nav .header {
 
 .footer-logo i {
   font-size: 35px;
-  color: #fff;
 }
 
 .footer-logo h2 {
@@ -397,7 +408,7 @@ hr {
   font-size: 14px;
 }
 
-/* MOBILE MENU */
+/* ================= MOBILE MENU ================= */
 
 .menu-btn {
   display: none;
@@ -417,9 +428,14 @@ hr {
   display: none;
 }
 
-/* TABLET + MOBILE */
+/* ================= TABLET ================= */
 
 @media (max-width: 900px) {
+
+  main {
+    padding: 0 20px;
+  }
+
   nav .links {
     display: none;
   }
@@ -461,13 +477,42 @@ hr {
   .mobile-menu a:hover {
     background: #f1f1f1;
   }
+
+  /* Hero becomes vertical */
+  .hero-div {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .hero-div .left {
+    width: 100%;
+    min-height: 550px;
+    padding: 30px;
+  }
+
+  .right {
+    width: 100%;
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .left h1 {
+    font-size: clamp(60px, 12vw, 90px);
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 
-/* SMALL MOBILE */
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 600px) {
+
   main {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 
   nav {
@@ -475,7 +520,7 @@ hr {
   }
 
   .header i {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .header h1 {
@@ -484,7 +529,7 @@ hr {
 
   nav > .btn {
     gap: 5px;
-    margin-right: 8px;
+    margin-right: 5px;
   }
 
   nav > .btn button {
@@ -493,13 +538,198 @@ hr {
   }
 
   .menu-btn {
-    width: 35px;
-    height: 35px;
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+  }
+
+  /* HERO */
+
+  #section-1 {
+    min-height: auto;
+  }
+
+  .hero-div {
+    padding: 10px;
+    gap: 10px;
+    border-radius: 15px;
+  }
+
+  .hero-div .left {
+    width: 100%;
+    min-height: 520px;
+    padding: 20px 12px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .logos {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .left .rating {
+    padding: 8px 15px;
+    gap: 7px;
+  }
+
+  .rating i {
+    font-size: 22px;
+  }
+
+  .rating-text h3 {
+    font-size: 22px;
+  }
+
+  .rating-text span {
+    font-size: 10px;
+  }
+
+  .left h1 {
+    font-size: clamp(48px, 16vw, 72px);
+    line-height: 0.9;
+    word-break: normal;
+  }
+
+  .left p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .left .btn {
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+
+  .left .btn button {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .left .trusted {
+    width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* IMAGE */
+
+  .right {
+    width: 100%;
+    height: 400px;
+    min-height: 400px;
+    border-radius: 15px;
+  }
+
+  .right img {
+    object-position: center;
+  }
+
+  /* SECTION 2 */
+
+  #section-2 {
+    min-height: auto;
+    padding: 15px 0;
+  }
+
+  .marquee-div {
+    min-height: 410px;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 5px;
+  }
+
+  .card {
+    flex: 0 0 250px;
+    width: 250px;
+    height: 370px;
+  }
+
+  /* FOOTER */
+
+  #footer {
+    margin-top: 30px;
+    padding: 40px 20px 20px;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-about p {
+    width: 100%;
+    line-height: 22px;
+    font-size: 14px;
+  }
+
+  .footer-logo h2 {
+    font-size: 24px;
+  }
+
+  .footer-links h3,
+  .footer-contact h3 {
     font-size: 18px;
   }
 
-  .mobile-menu a {
-    font-size: 13px;
-    padding: 11px 12px;
+  .footer-links,
+  .footer-contact {
+    gap: 10px;
+  }
+
+  .social-icons {
+    margin-top: 15px;
+  }
+
+  hr {
+    margin: 30px 0 15px;
+  }
+
+  .copyright p {
+    font-size: 11px;
+  }
+}
+
+/* ================= VERY SMALL PHONES ================= */
+
+@media (max-width: 380px) {
+
+  main {
+    padding: 0 8px;
+  }
+
+  .header h1 {
+    font-size: 14px;
+  }
+
+  nav > .btn button {
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+
+  .menu-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-div .left {
+    min-height: 500px;
+    padding: 18px 10px;
+  }
+
+  .left h1 {
+    font-size: 45px;
+  }
+
+  .right {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .card {
+    flex: 0 0 230px;
+    width: 230px;
   }
 }
